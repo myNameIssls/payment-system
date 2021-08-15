@@ -1,0 +1,73 @@
+# Intellij
+.idea/
+*/.idea/
+*/*.iml
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+classes/
+out/
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+/log/
+/target/
+
+# Eclipse
+*.pydevproject
+.project
+.springBeans
+.metadata
+tmp/
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.factorypath
+/src/main/resources/rebel.xml
+
+# Directories
+/bin/
+/deploy/
+
+
+# Logs
+*.log*
+/logs/**
+*logs/**
+**/logs/**
+**/debug-logs/**
+
+# Others
+*.class
+*.*~
+*~
+.merge_file*
+
+# Gradle Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# ESLint
+.eslintcache
+
+# Package Files
+*.war
+*.ear
+classpath-data.json
+*/.sts4-cache/*
+
+/.workflow/
