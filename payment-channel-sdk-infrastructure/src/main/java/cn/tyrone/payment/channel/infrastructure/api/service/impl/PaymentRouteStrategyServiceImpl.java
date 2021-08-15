@@ -3,7 +3,9 @@ package cn.tyrone.payment.channel.infrastructure.api.service.impl;
 import cn.tyrone.payment.channel.common.enums.ChannelConfigCode;
 import cn.tyrone.payment.channel.common.enums.PaymentGatewayType;
 import cn.tyrone.payment.channel.domain.service.IPaymentRouteStrategyService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PaymentRouteStrategyServiceImpl implements IPaymentRouteStrategyService {
 
     @Override
