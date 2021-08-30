@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 转账支付策略上下文
+ */
 @Component
 public class TransferAccountRouteStrategyContext {
 

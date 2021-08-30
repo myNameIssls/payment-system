@@ -9,6 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentRouteStrategyServiceImpl implements IPaymentRouteStrategyService {
 
+    /**
+     * 根据支付网关类型和渠道配置编码获取支付路由策略
+     * @param paymentGatewayType
+     * @param channelConfigCode
+     * @return
+     */
     @Override
     public String paymentRouteStrategy(PaymentGatewayType paymentGatewayType, ChannelConfigCode channelConfigCode) {
 
