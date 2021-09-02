@@ -21,4 +21,7 @@
 - **payment-channel-sdk-common：** 支付渠道网关公共依赖包，提供支付渠道网关通用的实体、数据传输对象、枚举、工具等。
 - **payment-channel-sdk-start：** 支付渠道网关服务启动包。
 
+## 支付系统设计专栏
+[https://shanglishuai.blog.csdn.net/article/details/120069286](https://shanglishuai.blog.csdn.net/article/details/120069286)
+
 
