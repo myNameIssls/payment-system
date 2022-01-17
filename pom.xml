@@ -103,6 +103,7 @@
         <module>payment-channel-sdk-ui</module>
         <module>payment-channel-sdk-application</module>
         <module>payment-channel-sdk-start</module>
+        <module>payment-account-domain</module>
     </modules>
 
 </project>
