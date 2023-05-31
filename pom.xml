@@ -104,7 +104,20 @@
         <module>payment-channel-sdk-application</module>
         <module>payment-channel-sdk-start</module>
         <module>payment-account</module>
+        <module>payment-channel</module>
 
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
