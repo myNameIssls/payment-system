@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.client.cpcn;
+package cn.tyrone.payment.channelctx.acl.adapter.route.cpcn;
 
 import com.trz.netwk.api.system.TrdMessenger;
 import com.trz.netwk.api.trd.TrdBaseRequest;
@@ -11,6 +11,9 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 
+/**
+ * 中金支付原子API
+ */
 @Slf4j
 @Service
 public class CpcnApiService {
