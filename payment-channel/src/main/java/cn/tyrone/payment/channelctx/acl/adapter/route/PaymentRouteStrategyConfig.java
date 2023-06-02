@@ -5,7 +5,7 @@ import cn.tyrone.payment.channelctx.domain.PaymentChannelUniqueCode;
 import cn.tyrone.payment.channelctx.domain.PaymentGatewayType;
 import org.springframework.util.StringUtils;
 
-import java.util.Arrays;
+import java.util.stream.Stream;
 
 /**
  * 支付路由策略配置
@@ -21,9 +21,6 @@ public enum PaymentRouteStrategyConfig {
 //    BALANCE_QUERY_CITIC_CMS(PaymentGatewayType.BALANCE_QUERY, PaymentChannelUniqueCode.CITIC_TOW, BalanceQueryRouteStrategyCiticCMS.class, "中信银行现金管理系统余额查询"),
 //    TRANSFER_ACCOUNT_CITIC_CMS(PaymentGatewayType.TRANSFER_ACCOUNT, PaymentChannelUniqueCode.CITIC_TOW, TransferAccountRouteStrategyCiticCMS.class, "中信银行现金管理系统转账支付"),
     // 中信银行-现金管理系统-结束
-
-
-    ;
 
     ;
 
@@ -51,9 +48,9 @@ public enum PaymentRouteStrategyConfig {
     public static String getPaymentRouteStrategyServiceName(
             PaymentGatewayType paymentGatewayType, PaymentChannelUniqueCode paymentChannelUniqueCode) {
 
-        PaymentRouteStrategyConfig paymentRouteStrategyConfig1 = Arrays.stream(PaymentRouteStrategyConfig.values()).filter(paymentRouteStrategyConfig -> {
+        PaymentRouteStrategyConfig paymentRouteStrategyConfig1 = Stream.of(PaymentRouteStrategyConfig.values()).filter(paymentRouteStrategyConfig -> {
             return paymentRouteStrategyConfig.paymentGatewayType.equals(paymentGatewayType) && paymentRouteStrategyConfig.paymentChannelUniqueCode.equals(paymentChannelUniqueCode);
-        }).findFirst().get();
+        }).findFirst().orElseThrow(IllegalArgumentException::new);
 
         Class cls = paymentRouteStrategyConfig1.routeStrategyImplClass;
         String simpleName = cls.getSimpleName();
