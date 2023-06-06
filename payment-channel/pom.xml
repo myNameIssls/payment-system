@@ -47,6 +47,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.tyrone.payment</groupId>
+            <artifactId>payment-common</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

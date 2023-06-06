@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.domain;
+package cn.tyrone.payment.channelctx.domain.channel;
 
 /**
  * 支付网关类型

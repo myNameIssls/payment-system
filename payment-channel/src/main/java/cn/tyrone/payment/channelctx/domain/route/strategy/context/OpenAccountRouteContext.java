@@ -2,8 +2,8 @@ package cn.tyrone.payment.channelctx.domain.route.strategy.context;
 
 import cn.tyrone.payment.channelctx.acl.port.route.PaymentRouteStrategyService;
 import cn.tyrone.payment.channelctx.domain.OpenAccountRequest;
-import cn.tyrone.payment.channelctx.domain.PaymentChannelUniqueCode;
-import cn.tyrone.payment.channelctx.domain.PaymentGatewayType;
+import cn.tyrone.payment.channelctx.domain.channel.PaymentChannelUniqueCode;
+import cn.tyrone.payment.channelctx.domain.channel.PaymentGatewayType;
 import cn.tyrone.payment.channelctx.domain.route.strategy.OpenAccountRoute;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package cn.tyrone.payment.channelctx.domain.route.strategy;
 
-import cn.tyrone.payment.channelctx.domain.OpenAccountRequest;
-import cn.tyrone.payment.channelctx.domain.OpenAccountResponse;
+import cn.tyrone.payment.channelctx.pl.OpenAccountRequest;
+import cn.tyrone.payment.channelctx.pl.OpenAccountResponse;
 
 /**
  * 开户路由策略

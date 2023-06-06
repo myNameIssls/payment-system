@@ -1,14 +1,23 @@
 package cn.tyrone.payment.channelctx.acl.adapter.route.cpcn;
 
-import cn.tyrone.payment.channelctx.domain.OpenAccountRequest;
-import cn.tyrone.payment.channelctx.domain.OpenAccountResponse;
 import cn.tyrone.payment.channelctx.domain.route.strategy.OpenAccountRoute;
+import cn.tyrone.payment.channelctx.pl.OpenAccountRequest;
+import cn.tyrone.payment.channelctx.pl.OpenAccountResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OpenAccountRouteCpcnAdapter implements OpenAccountRoute {
+
+
+    @Autowired
+    private CpcnApiServiceAdapter apiServiceAdapter;
+
     @Override
     public OpenAccountResponse openAccount(OpenAccountRequest openAccountRequest) {
-        return null;
+
+        OpenAccountResponse openAccountResponse = apiServiceAdapter.openAccount(openAccountRequest);
+
+        return openAccountResponse;
     }
 }

@@ -1,8 +1,8 @@
 package cn.tyrone.payment.channelctx.acl.adapter.route;
 
 import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.OpenAccountRouteCpcnAdapter;
-import cn.tyrone.payment.channelctx.domain.PaymentChannelUniqueCode;
-import cn.tyrone.payment.channelctx.domain.PaymentGatewayType;
+import cn.tyrone.payment.channelctx.domain.channel.PaymentChannelUniqueCode;
+import cn.tyrone.payment.channelctx.domain.channel.PaymentGatewayType;
 import org.springframework.util.StringUtils;
 
 import java.util.stream.Stream;
