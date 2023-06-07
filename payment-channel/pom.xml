@@ -23,9 +23,9 @@
         <dependency>
             <groupId>trz.netwk.api</groupId>
             <artifactId>trz.netwk.api</artifactId>
-            <version>1.7.4.1065</version>
+            <version>1.7.4.1031</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/trz-netwk-api-1.7.4.1065.jar</systemPath>
+            <systemPath>${project.basedir}/libs/trz-netwk-api-1.7.4.1131.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -41,10 +41,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
         </dependency>
 
         <dependency>
