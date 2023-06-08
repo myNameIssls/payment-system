@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model;
+package cn.tyrone.payment.channelctx.pl;
 
 import lombok.Getter;
 
@@ -6,7 +6,7 @@ import lombok.Getter;
  * 业务功能标识
  */
 @Getter
-public enum FcFlgEnum {
+public enum FunctionFlag {
 
     ONE("1", "开户"),
     TWO("2", "修改"),
@@ -17,7 +17,7 @@ public enum FcFlgEnum {
 
     private String describe;
 
-    private FcFlgEnum(String fcFlg, String describe){
+    private FunctionFlag(String fcFlg, String describe){
         this.fcFlg = fcFlg;
         this.describe = describe;
     }

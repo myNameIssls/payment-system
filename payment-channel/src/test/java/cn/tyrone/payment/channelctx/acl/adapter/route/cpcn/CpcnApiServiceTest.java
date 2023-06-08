@@ -3,6 +3,7 @@ package cn.tyrone.payment.channelctx.acl.adapter.route.cpcn;
 import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model.*;
+import cn.tyrone.payment.channelctx.pl.FunctionFlag;
 import com.trz.netwk.api.system.InitSystem;
 import com.trz.netwk.api.trd.TrdT1031Request;
 import com.trz.netwk.api.trd.TrdT1031Response;
@@ -48,7 +49,7 @@ class CpcnApiServiceTest {
         request.setMsghd_trdt(LocalDateTimeUtil.format(LocalDate.now(), DateTimeFormatter.BASIC_ISO_DATE));
         request.setSrl_ptnsrl(IdUtil.getSnowflake().nextIdStr());
 
-        request.setFcflg(FcFlgEnum.ONE.getFcFlg());
+        request.setFcflg(FunctionFlag.ONE.getFcFlg());
         request.setAcctp(AccTp.ONE.accTp);
         request.setCltacc_cltno("15993808703");
         request.setCltacc_cltnm("白云数字科技");
