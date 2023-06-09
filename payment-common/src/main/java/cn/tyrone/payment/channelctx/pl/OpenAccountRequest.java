@@ -1,8 +1,12 @@
 package cn.tyrone.payment.channelctx.pl;
 
 import cn.tyrone.payment.commonctx.pl.SecondaryAccountType;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
-public class OpenAccountRequest {
+@Data
+@SuperBuilder
+public class OpenAccountRequest extends AbstractCommonRequest {
 
     /**
      * 客户编码
@@ -38,6 +42,16 @@ public class OpenAccountRequest {
      * 企业法人
      */
     private LegalPerson legalPerson;
+
+    /**
+     * 企业信息
+     */
+    private Enterprise enterprise;
+
+    /**
+     * 经办人
+     */
+    private Operator operator;
 
     /**
      * 银行编码

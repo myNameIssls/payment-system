@@ -20,12 +20,12 @@ public enum CertificateType {
 
     ;
 
-    public String type;
+    public String certificateType;
 
     public String describe;
 
-    private CertificateType(String type, String describe){
-        this.type = type;
+    private CertificateType(String certificateType, String describe){
+        this.certificateType = certificateType;
         this.describe = describe;
     }
 

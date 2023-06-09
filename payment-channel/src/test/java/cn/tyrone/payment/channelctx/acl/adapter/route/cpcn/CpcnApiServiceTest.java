@@ -4,6 +4,8 @@ import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model.*;
 import cn.tyrone.payment.channelctx.pl.FunctionFlag;
+import cn.tyrone.payment.commonctx.pl.CertificateType;
+import cn.tyrone.payment.commonctx.pl.SecondaryAccountType;
 import com.trz.netwk.api.system.InitSystem;
 import com.trz.netwk.api.trd.TrdT1031Request;
 import com.trz.netwk.api.trd.TrdT1031Response;
@@ -50,12 +52,12 @@ class CpcnApiServiceTest {
         request.setSrl_ptnsrl(IdUtil.getSnowflake().nextIdStr());
 
         request.setFcflg(FunctionFlag.ONE.getFcFlg());
-        request.setAcctp(AccTp.ONE.accTp);
+        request.setAcctp(SecondaryAccountType.ONE.secondaryAccountType);
         request.setCltacc_cltno("15993808703");
         request.setCltacc_cltnm("白云数字科技");
         request.setClt_nm("阿布都海力力·纳斯尔");
         request.setClt_kd(CltKd.ONE.cltKd);
-        request.setClt_cdtp(CdTp.A.cdTp); // 证件类型
+        request.setClt_cdtp(CertificateType.A.certificateType); // 证件类型
         request.setClt_cdno("130681198510282834");
         request.setClt_cdisdt("20220511");
         request.setClt_cdexdt("20280511");
@@ -146,12 +148,10 @@ class CpcnApiServiceTest {
         request.setBkacc_accno("6243020300098909876");
 
         request.setBkacc_crdtp(CrdTp.A.crdTp);
-        request.setBkacc_cdtp(CdTp.H.cdTp);
+        request.setBkacc_cdtp(CertificateType.H.certificateType);
         request.setBkacc_cdno("911101159A001A3A0N");
         request.setBkacc_crsmk("2");
         request.setBkacc_openbkcd("103100000026");
-//        request.setBkacc_openbknm("中国农业银行资金清算中心");
-//        request.setBkacc_prccd("110100");
 
         request.setActiflag("4");
         request.setSrl_ptnsrl(IdUtil.getSnowflake().nextIdStr());

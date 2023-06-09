@@ -1,6 +1,16 @@
 package cn.tyrone.payment.channelctx.pl;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class Enterprise {
+
+    /**
+     * 企业名称
+     */
+    private String name;
 
     /**
      * 统一社会信用代码
@@ -10,7 +20,7 @@ public class Enterprise {
     /**
      * 统一社会信用代码开始日期
      */
-    private String unifiedSocialCreditCodeStartDate;
+    private String unifiedSocialCreditCodeBeginDate;
 
     /**
      * 统一社会信用代码到期日期

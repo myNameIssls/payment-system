@@ -1,10 +1,14 @@
 package cn.tyrone.payment.channelctx.pl;
 
 import cn.tyrone.payment.commonctx.pl.CertificateType;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
  */
+@Data
+@SuperBuilder
 public abstract class AbstractPerson {
 
     /**

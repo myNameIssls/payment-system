@@ -12,9 +12,9 @@ public enum EnterpriseScale {
     FIVE("05", "其它"),
     ;
 
-    private String enterpriseScale;
+    public String enterpriseScale;
 
-    private String describe;
+    public String describe;
 
     private EnterpriseScale(String enterpriseScale, String describe) {
         this.enterpriseScale = enterpriseScale;
