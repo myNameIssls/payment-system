@@ -2,6 +2,7 @@ package cn.tyrone.payment.channelctx.acl.adapter.route.cpcn;
 
 import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.core.util.IdUtil;
+import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model.ActiFlag;
 import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model.CltKd;
 import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model.CrdTp;
 import cn.tyrone.payment.channelctx.pl.*;
@@ -26,6 +27,7 @@ import java.util.List;
 @Service
 public class CpcnApiMessageConverter {
 
+    private static final String SUCCESS_CODE = "000000";
 
     public TrdT1031Request fromOpenAccountRequest(OpenAccountRequest openAccountRequest) {
 
@@ -140,7 +142,7 @@ public class CpcnApiMessageConverter {
         request.setBkacc_cdno(enterprise.getUnifiedSocialCreditCode());
         request.setBkacc_crsmk("2");
         request.setBkacc_openbkcd(openAccountRequest.getBankBranchCode());
-        request.setActiflag("4");
+        request.setActiflag(ActiFlag.FOUR.getFcFlg());
 
         return request;
 
@@ -168,7 +170,31 @@ public class CpcnApiMessageConverter {
 
     public OpenAccountResponse toOpenAccountResponse(TrdT1031Response trdT1031Response) {
 
-        return new OpenAccountResponse();
+        String msghdRspcode = trdT1031Response.getMsghd_rspcode();
+        String msghdRspmsg = trdT1031Response.getMsghd_rspmsg();
+
+        OpenAccountResponse openAccountResponse = null;
+        if (!msghdRspcode.equals(SUCCESS_CODE)) {
+            openAccountResponse = OpenAccountResponse.builder()
+                    .responseStatus(Boolean.FALSE).responseMessage(msghdRspmsg)
+                    .build();
+        }
+
+        if (msghdRspcode.equals(SUCCESS_CODE)) {
+            String srlPtnsrl = trdT1031Response.getSrl_ptnsrl();
+            String srlPlatsrl = trdT1031Response.getSrl_platsrl();
+            String cltaccSubno = trdT1031Response.getCltacc_subno();
+            String cltaccCltnm = trdT1031Response.getCltacc_cltnm();
+            String cltaccCltno = trdT1031Response.getCltacc_cltno();
+
+            openAccountResponse = OpenAccountResponse.builder()
+                    .responseStatus(Boolean.TRUE).responseMessage(msghdRspmsg)
+                    .platformSerialNumber(srlPtnsrl).channelSerialNumber(srlPlatsrl)
+                    .subAccount(cltaccSubno).subAccountName(cltaccCltnm).customerCode(cltaccCltno)
+                    .build();
+        }
+
+        return openAccountResponse;
 
     }
 

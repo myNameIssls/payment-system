@@ -35,7 +35,9 @@ public class OpenAccountRouteContext {
      */
     public OpenAccountRoute getOpenAccountRoute(OpenAccountRequest openAccountRequest){
 
-        PaymentChannelUniqueCode paymentChannelUniqueCode = PaymentChannelUniqueCode.CPCN_ONE;
+        String uniqueValue = openAccountRequest.getPaymentChannelUniqueCode();
+
+        PaymentChannelUniqueCode paymentChannelUniqueCode = PaymentChannelUniqueCode.of(uniqueValue);
 
         String paymentRouteStrategyServiceName = paymentRouteStrategyService.paymentRouteStrategyServiceName(PaymentGatewayType.OPEN_ACCOUNT, paymentChannelUniqueCode);
         OpenAccountRoute openAccountRoute = this.openAccountRouteMap.get(paymentRouteStrategyServiceName);

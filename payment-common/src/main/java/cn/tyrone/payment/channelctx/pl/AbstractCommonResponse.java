@@ -1,5 +1,10 @@
 package cn.tyrone.payment.channelctx.pl;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@SuperBuilder
 public class AbstractCommonResponse {
 
     /**
@@ -15,7 +20,7 @@ public class AbstractCommonResponse {
     /**
      * 应答状态
      */
-    private Boolean communicationStatus;
+    private Boolean responseStatus;
 
     /**
      * 应答消息

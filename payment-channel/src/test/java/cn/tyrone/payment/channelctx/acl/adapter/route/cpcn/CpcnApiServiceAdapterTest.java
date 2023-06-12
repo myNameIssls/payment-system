@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @Slf4j
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.NONE,
@@ -44,14 +42,14 @@ class CpcnApiServiceAdapterTest {
                 .build();
         LegalPerson legalPerson = LegalPerson.builder()
                 .name("孙行者").phoneNumber("18600897656")
-                .certificateNum("110113197608090768")
+                .certificateNum("110101199001016839")
                 .certificateSignDateBegin("20000101").certificateSignDateEnd("20200101")
                 .certificateFrontStorageAddr("https://tangpiao-test.oss-cn-hangzhou.aliyuncs.com/c4a7c7a0369340bb844da883e95766c0/233835-158178111567da.jpg")
                 .certificateBackStorageAddr("https://tangpiao-test.oss-cn-hangzhou.aliyuncs.com/c4a7c7a0369340bb844da883e95766c0/233835-158178111567da.jpg")
                 .build();
         Operator operator = Operator.builder()
                 .name("唐三藏")
-                .certificateNum("110112176809080768").phoneNumber("18600878798")
+                .certificateNum("110101199001019095").phoneNumber("18600878798")
                 .certificateSignDateBegin("20000101").certificateSignDateEnd("20200101")
                 .certificateFrontStorageAddr("https://tangpiao-test.oss-cn-hangzhou.aliyuncs.com/c4a7c7a0369340bb844da883e95766c0/233835-158178111567da.jpg")
                 .certificateBackStorageAddr("https://tangpiao-test.oss-cn-hangzhou.aliyuncs.com/c4a7c7a0369340bb844da883e95766c0/233835-158178111567da.jpg")
@@ -60,14 +58,12 @@ class CpcnApiServiceAdapterTest {
         OpenAccountRequest openAccountRequest = OpenAccountRequest.builder()
                 .platformSerialNumber(IdUtil.getSnowflakeNextIdStr())
                 .customerCode(IdUtil.getSnowflakeNextIdStr())
-                .bankCode("102").bankAccount("6222020300065768909")
+                .bankCode("102").bankAccount("760203000610")
                 .bankBranchCode("102100099996")
                 .enterprise(enterprise).legalPerson(legalPerson).operator(operator)
                 .build();
         OpenAccountResponse openAccountResponse = apiServiceAdapter.openAccount(openAccountRequest);
-        log.debug("开户接口结束");
-
-
+        log.debug("开户结果:{}", openAccountResponse.toString());
 
     }
 
