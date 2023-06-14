@@ -6,7 +6,7 @@ package cn.tyrone.payment.channelctx.domain.channel;
 public enum PaymentGatewayType {
 
     OPEN_ACCOUNT("OPEN_ACCOUNT", "开户"),
-    BALANCE_QUERY("BALANCE_QUERY", "余额查询"),
+    ACCOUNT_BALANCE("ACCOUNT_BALANCE", "余额查询"),
     ACCOUNT_DETAILS_QUERY("ACCOUNT_DETAILS_QUERY", "账户明细查询"),
     TRANSFER_ACCOUNT("TRANSFER_ACCOUNT", "转账支付"),
 

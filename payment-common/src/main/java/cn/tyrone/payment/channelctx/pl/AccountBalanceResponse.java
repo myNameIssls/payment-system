@@ -2,17 +2,19 @@ package cn.tyrone.payment.channelctx.pl;
 
 import cn.tyrone.payment.commonctx.extend.ToStringStyleExtend;
 import lombok.Data;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.math.BigDecimal;
+
+/**
+ * 账户余额应答
+ */
 @Data
 @SuperBuilder
-public class OpenAccountResponse extends AbstractCommonResponse {
-
-    /**
-     * 客户编码
-     */
-    private String customerCode;
+@ToString(callSuper = true)
+public class AccountBalanceResponse extends AbstractCommonResponse {
 
     /**
      * 账户
@@ -25,9 +27,29 @@ public class OpenAccountResponse extends AbstractCommonResponse {
     private String subAccountName;
 
     /**
-     * 银行电子账号
+     * 账户余额
      */
-    private String bankElecAccount;
+    private BigDecimal accountBalance;
+
+    /**
+     * 冻结金额
+     */
+    private BigDecimal frozenAmount;
+
+    /**
+     * 可用金额
+     */
+    private BigDecimal usableAmount;
+
+    /**
+     * t0额度
+     */
+    private BigDecimal t0Quota;
+
+    /**
+     * t0额度
+     */
+    private BigDecimal t1Quota;
 
     @Override
     public String toString() {
@@ -35,4 +57,5 @@ public class OpenAccountResponse extends AbstractCommonResponse {
         return ToStringBuilder.reflectionToString(this, ToStringStyleExtend.JSON_STYLE_EXTEND);
 
     }
+
 }

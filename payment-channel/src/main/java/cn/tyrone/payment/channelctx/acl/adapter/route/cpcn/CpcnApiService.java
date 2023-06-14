@@ -1,9 +1,7 @@
 package cn.tyrone.payment.channelctx.acl.adapter.route.cpcn;
 
 import com.trz.netwk.api.system.TrdMessenger;
-import com.trz.netwk.api.trd.TrdBaseRequest;
-import com.trz.netwk.api.trd.TrdT1031Request;
-import com.trz.netwk.api.trd.TrdT1031Response;
+import com.trz.netwk.api.trd.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -57,6 +55,25 @@ public class CpcnApiService {
             trdResponse = new TrdT1031Response(response);
         } catch (Exception e) {
             log.error("开户绑卡_异步[T1031]系统异常:", e);
+        }
+
+        return trdResponse;
+    }
+
+    /**
+     * 资金账户余额查询[T1005]
+     * @param trdRequest
+     * @return
+     */
+    public TrdT1005Response t1005(TrdT1005Request trdRequest) {
+        TrdT1005Response trdResponse = null;
+
+        String response = this.execute(trdRequest);
+
+        try {
+            trdResponse = new TrdT1005Response(response);
+        } catch (Exception e) {
+            log.error("资金账户余额查询[T1005]系统异常",e);
         }
 
         return trdResponse;

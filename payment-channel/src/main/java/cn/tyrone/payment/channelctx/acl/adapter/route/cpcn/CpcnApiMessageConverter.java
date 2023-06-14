@@ -8,6 +8,8 @@ import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.model.CrdTp;
 import cn.tyrone.payment.channelctx.pl.*;
 import cn.tyrone.payment.commonctx.pl.CertificateType;
 import cn.tyrone.payment.commonctx.pl.SecondaryAccountType;
+import com.trz.netwk.api.trd.TrdT1005Request;
+import com.trz.netwk.api.trd.TrdT1005Response;
 import com.trz.netwk.api.trd.TrdT1031Request;
 import com.trz.netwk.api.trd.TrdT1031Response;
 import com.trz.netwk.api.vo.FleInfo;
@@ -16,6 +18,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -205,4 +208,43 @@ public class CpcnApiMessageConverter {
         System.out.printf(bufferString);
     }
 
+    public TrdT1005Request fromAccountBalanceRequest(AccountBalanceRequest accountBalanceRequest) {
+
+        TrdT1005Request trdRequest = new TrdT1005Request();
+        trdRequest.setMsghd_trdt(LocalDateTimeUtil.format(LocalDate.now(), DateTimeFormatter.BASIC_ISO_DATE));
+        trdRequest.setCltacc_subno(accountBalanceRequest.getSubAccount());
+        trdRequest.setCltacc_cltnm(accountBalanceRequest.getSubAccountName());
+        return trdRequest;
+    }
+
+    public AccountBalanceResponse toAccountBalanceResponse(TrdT1005Response trdT1005Response) {
+
+        String msghdRspcode = trdT1005Response.getMsghd_rspcode();
+        String msghdRspmsg = trdT1005Response.getMsghd_rspmsg();
+
+        AccountBalanceResponse accountBalanceResponse = null;
+        if (!msghdRspcode.equals(SUCCESS_CODE)) {
+            accountBalanceResponse = AccountBalanceResponse.builder()
+                    .responseStatus(Boolean.FALSE).responseMessage(msghdRspmsg)
+                    .build();
+        }
+
+        if (msghdRspcode.equals(SUCCESS_CODE)) {
+            String srlPtnsrl = trdT1005Response.getSrl_ptnsrl();
+            String srlPlatsrl = trdT1005Response.getSrl_platsrl();
+            long amtBalamt = trdT1005Response.getAmt_balamt();
+            long amtUseamt = trdT1005Response.getAmt_useamt();
+            long amtFrzamt = trdT1005Response.getAmt_frzamt();
+
+            accountBalanceResponse = AccountBalanceResponse.builder()
+                    .responseStatus(Boolean.TRUE).responseMessage(msghdRspmsg)
+                    .platformSerialNumber(srlPtnsrl).channelSerialNumber(srlPlatsrl)
+                    .accountBalance(new BigDecimal(amtBalamt)).usableAmount(new BigDecimal(amtUseamt))
+                    .frozenAmount(new BigDecimal(amtFrzamt))
+                    .build();
+        }
+
+        return accountBalanceResponse;
+
+    }
 }

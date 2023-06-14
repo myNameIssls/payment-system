@@ -7,6 +7,8 @@ import cn.tyrone.payment.channelctx.pl.FunctionFlag;
 import cn.tyrone.payment.commonctx.pl.CertificateType;
 import cn.tyrone.payment.commonctx.pl.SecondaryAccountType;
 import com.trz.netwk.api.system.InitSystem;
+import com.trz.netwk.api.trd.TrdT1005Request;
+import com.trz.netwk.api.trd.TrdT1005Response;
 import com.trz.netwk.api.trd.TrdT1031Request;
 import com.trz.netwk.api.trd.TrdT1031Response;
 import com.trz.netwk.api.vo.FleInfo;
@@ -162,4 +164,16 @@ class CpcnApiServiceTest {
         System.out.println(trdT1031Response.getResponsePlainText());
 
     }
+
+    @Test
+    void t1005(){
+        TrdT1005Request trdRequest = new TrdT1005Request();
+        trdRequest.setMsghd_trdt(LocalDateTimeUtil.format(LocalDate.now(), DateTimeFormatter.BASIC_ISO_DATE));
+        trdRequest.setCltacc_subno("2308711003921814");
+        trdRequest.setCltacc_cltnm("中金二期测试供应商六");
+        TrdT1005Response trdT1005Response = apiService.t1005(trdRequest);
+        log.debug(trdRequest.getRequestPlainText());
+        log.debug(trdT1005Response.getResponsePlainText());
+    }
+
 }

@@ -67,6 +67,15 @@ class CpcnApiServiceAdapterTest {
 
     }
 
+    @Test
+    void accountBalance() {
+        AccountBalanceRequest accountBalanceRequest = AccountBalanceRequest.builder()
+                .subAccount("2308711003921814").subAccountName("中金二期测试供应商六")
+                .build();
+        AccountBalanceResponse accountBalanceResponse = apiServiceAdapter.accountBalance(accountBalanceRequest);
+        log.debug("账户余额查询结果：{}", accountBalanceResponse.toString());
+    }
+
     public static void main(String[] args) {
         log.debug("-------------");
     }

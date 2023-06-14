@@ -1,6 +1,7 @@
 package cn.tyrone.payment.channelctx.acl.adapter.route;
 
-import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.OpenAccountRouteCpcnAdapter;
+import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.strategy.impl.AccountBalanceRouteCpcnAdapter;
+import cn.tyrone.payment.channelctx.acl.adapter.route.cpcn.strategy.impl.OpenAccountRouteCpcnAdapter;
 import cn.tyrone.payment.channelctx.domain.channel.PaymentChannelUniqueCode;
 import cn.tyrone.payment.channelctx.domain.channel.PaymentGatewayType;
 import org.springframework.util.StringUtils;
@@ -14,7 +15,7 @@ public enum PaymentRouteStrategyConfig {
 
     // 中金支付-记账系统-开始
     OPEN_ACCOUNT_CPCN_ACS(PaymentGatewayType.OPEN_ACCOUNT, PaymentChannelUniqueCode.CPCN_ONE, OpenAccountRouteCpcnAdapter.class, "中金支付-开户接口-记账系统"),
-//    ACCOUNT_DETAILS_QUERY_CPCN_ACS(PaymentGatewayType.ACCOUNT_DETAILS_QUERY, PaymentChannelUniqueCode.CPCN_ONE, AccountDetailsQueryRouteStrategyCpcnAcs.class, "中金支付-账户明细查询-记账系统"),
+    ACCOUNT_BALANCE_CPCN_ACS(PaymentGatewayType.ACCOUNT_BALANCE, PaymentChannelUniqueCode.CPCN_ONE, AccountBalanceRouteCpcnAdapter.class, "中金支付-账户余额接口-记账系统"),
     // 中金支付-记账系统-结束
 
     // 中信银行-现金管理系统-开始

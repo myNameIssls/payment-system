@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 /**
  * 支付渠道唯一编码编码
  */
-@Getter
 public enum PaymentChannelUniqueCode {
 
     CPCN_ONE("CPCN-001", "中金支付-ACS记账系统"),
