@@ -1,5 +1,7 @@
 package cn.tyrone.payment.channelctx.domain.channel;
 
+import java.util.Map;
+
 /**
  * 支付通道
  */
@@ -13,5 +15,7 @@ public class PaymentChannel {
     private PaymentChannelUniqueCode paymentChannelUniqueCode;
 
     private String name;
+
+    private Map<String, Object> paymentChannelConfig;
 
 }

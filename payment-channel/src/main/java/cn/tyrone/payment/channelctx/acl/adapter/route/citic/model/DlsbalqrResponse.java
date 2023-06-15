@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.citic;
+package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 import cn.tyrone.payment.commonctx.util.XmlUtil;
 import lombok.Data;
@@ -17,14 +17,14 @@ import java.util.stream.Collectors;
 @Data
 @SuperBuilder
 @ToString(callSuper = true)
-public class DlbalqryResponse extends AbstractCiticBaseResponse {
+public class DlsbalqrResponse extends AbstractCiticBaseResponse {
 
     /**
      * 状态结果集
      */
-    private List<DlbalqryResponseUserData> userDataList;
+    private List<DlsbalqrResponseUserData> userDataList;
 
-    public DlbalqryResponse(String responseMessage) throws DocumentException {
+    public DlsbalqrResponse(String responseMessage) throws DocumentException {
         super(responseMessage);
         this.processing(this.document);
     }
@@ -36,7 +36,7 @@ public class DlbalqryResponse extends AbstractCiticBaseResponse {
             List<Node> parentNodeList = XmlUtil.getNodeList(document, "//stream/list/row");
 
             this.userDataList = parentNodeList.stream().map(node -> {
-                DlbalqryResponseUserData userData = DlbalqryResponseUserData.builder().build();
+                DlsbalqrResponseUserData userData = DlsbalqrResponseUserData.builder().build();
                 userData.init(node);
                 return userData;
             }).collect(Collectors.toList());

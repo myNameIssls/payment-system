@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.citic;
+package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 /**
  * 中信银行操作类型

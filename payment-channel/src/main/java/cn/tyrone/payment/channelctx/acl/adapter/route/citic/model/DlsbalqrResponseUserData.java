@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.citic;
+package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import org.dom4j.Node;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DlbalqryResponseUserData extends AbstractCiticBaseResponse {
+public class DlsbalqrResponseUserData extends AbstractCiticBaseResponse {
 
     /**
      * 账号

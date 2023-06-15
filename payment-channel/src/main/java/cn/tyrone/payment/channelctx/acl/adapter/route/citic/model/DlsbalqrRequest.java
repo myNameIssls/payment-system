@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.citic;
+package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
@@ -10,9 +10,9 @@ import java.util.List;
  */
 @Data
 @SuperBuilder
-public class DlbalqryRequest extends AbstractCiticBaseRequest {
+public class DlsbalqrRequest extends AbstractCiticBaseRequest {
 
-    private List<DlbalqryRequestUserData> userDataList;
+    private List<DlsbalqrRequestUserData> userDataList;
 
     @Override
     public String processing() throws RuntimeException {
@@ -25,9 +25,9 @@ public class DlbalqryRequest extends AbstractCiticBaseRequest {
         xml.append(super.actionProcessing());
         xml.append(super.elementProcessing("userName", this.userName, Boolean.TRUE));
         xml.append("<list name=\"userDataList\">");
-        userDataList.forEach(dlbalqryRequestUserData -> {
+        userDataList.forEach(dlsbalqrRequestUserData -> {
             xml.append("<row>");
-            xml.append(dlbalqryRequestUserData.processing());
+            xml.append(dlsbalqrRequestUserData.processing());
             xml.append("</row>");
         });
         xml.append("</list>");

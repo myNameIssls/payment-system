@@ -1,11 +1,11 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.citic;
+package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
-public class DlbalqryRequestUserData extends AbstractCiticBaseRequest {
+public class DlsbalqrRequestUserData extends AbstractCiticBaseRequest {
 
     /**
      * 付款账号

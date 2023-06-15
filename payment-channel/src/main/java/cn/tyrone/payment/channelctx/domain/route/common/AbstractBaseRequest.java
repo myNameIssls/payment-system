@@ -3,6 +3,7 @@ package cn.tyrone.payment.channelctx.domain.route.common;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
+import java.util.Map;
 import java.util.Optional;
 
 @Data
@@ -24,10 +25,11 @@ public abstract class AbstractBaseRequest {
      */
     protected String requestSign;
 
-//    /**
-//     * 支付渠道配置
-//     */
-//    protected PaymentChannelConfig paymentChannelConfig;
+    /**
+     * 支付渠道配置
+     */
+    protected Map<String, Object> channelConfig;
+
 
     /**
      * 报文声明处理过程
@@ -60,6 +62,7 @@ public abstract class AbstractBaseRequest {
             if (!elementTextOptional.isPresent() || "".equals(elementText)) {
                 throw new RuntimeException("节点" + elementName + "不允许为空");
             }
+
             element = "<" + elementName + ">" + elementText + "</" + elementName + ">";
         }
 

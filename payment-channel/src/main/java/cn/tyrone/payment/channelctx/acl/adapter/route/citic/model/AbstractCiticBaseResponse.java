@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channelctx.acl.adapter.route.citic;
+package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 
 import cn.tyrone.payment.channelctx.domain.route.common.AbstractBaseResponse;
