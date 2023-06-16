@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    #配置h2数据库的连接地址
+    # Embedded 嵌入式
+    # Remote (client/server) 远程连接
+    # In-Memory 内存
+    url: jdbc:h2:mem:test
+    #配置JDBC Driver
+    driver-class-name: org.h2.Driver
+    #配置数据库用户名
+    username: sa
+    #配置数据库密码
+    password:
+    #进行该配置，程序开启时就会启动h2 web consloe。当然这是默认的，如果你不想在启动程序时启动h2 web consloe，那么就设置为false。
+  h2:
+    console:
+      enabled: true
+      #进行该配置，你就可以通过YOUR_URL/h2访问h2 web consloe。YOUR_URL是你程序的访问URl。默认为/h2-console
+      path: /h2
+      # 进行该配置后，h2 web consloe就可以在远程访问了。否则只能在本机访问。
+      settings:
+        web-allow-others: true
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    #启用SQL语句的日志记录
+    show-sql: true
