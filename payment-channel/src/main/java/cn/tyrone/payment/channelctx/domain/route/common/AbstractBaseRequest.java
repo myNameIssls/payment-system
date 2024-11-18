@@ -59,7 +59,7 @@ public abstract class AbstractBaseRequest {
         Optional<String> elementTextOptional = Optional.ofNullable(elementText);
         if (ifMust) {
 
-            if (!elementTextOptional.isPresent() || "".equals(elementText)) {
+            if (elementTextOptional.isEmpty() || elementText.isEmpty()) {
                 throw new RuntimeException("节点" + elementName + "不允许为空");
             }
 
@@ -68,7 +68,7 @@ public abstract class AbstractBaseRequest {
 
         if (!ifMust) {
 
-            if (!elementTextOptional.isPresent()) {
+            if (elementTextOptional.isEmpty()) {
                 elementText = "";
             }
             element = "<" + elementName + ">" + elementText + "</" + elementName + ">";

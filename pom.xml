@@ -16,8 +16,9 @@
 <!--    </parent>-->
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencyManagement>
@@ -34,7 +35,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.20</version>
+                <version>1.18.32</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -130,9 +131,11 @@
         <module>payment-channel-sdk-ui</module>
         <module>payment-channel-sdk-application</module>
         <module>payment-channel-sdk-start</module>
-        <module>payment-account</module>
         <module>payment-channel</module>
         <module>payment-common</module>
+        <module>payment-client</module>
+        <module>payment-core</module>
+        <module>payment-sdk</module>
 
     </modules>
 
@@ -150,6 +153,20 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.32</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
