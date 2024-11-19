@@ -1,6 +1,6 @@
 package cn.tyrone.payment.channelctx.pl;
 
-import cn.tyrone.payment.commonctx.extend.ToStringStyleExtend;
+import cn.tyrone.payment.sdk.extend.ToStringStyleExtend;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;

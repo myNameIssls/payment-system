@@ -1,6 +1,6 @@
 package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
-import cn.tyrone.payment.commonctx.util.XmlUtil;
+import cn.tyrone.payment.sdk.util.XmlUtil;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;

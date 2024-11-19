@@ -21,7 +21,8 @@
 
         <dependency>
             <groupId>cn.tyrone.payment</groupId>
-            <artifactId>payment-system-common</artifactId>
+            <artifactId>payment-common-sdk</artifactId>
+            <version>${parent.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.tyrone.payment</groupId>

@@ -127,7 +127,6 @@
         <module>payment-channel-sdk-interface</module>
         <module>payment-channel-sdk-domain</module>
         <module>payment-channel-sdk-common</module>
-        <module>payment-system-common</module>
         <module>payment-channel-sdk-ui</module>
         <module>payment-channel-sdk-application</module>
         <module>payment-channel-sdk-start</module>
@@ -136,6 +135,7 @@
         <module>payment-client</module>
         <module>payment-core</module>
         <module>payment-sdk</module>
+        <module>payment-infrastructure</module>
 
     </modules>
 

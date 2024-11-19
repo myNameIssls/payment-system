@@ -1,5 +1,7 @@
 package cn.tyrone.payment.channel.infrastructure.api.citic.entity;
 
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.CashTransferFlag;
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.CreditDebitFlag;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

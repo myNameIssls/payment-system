@@ -21,7 +21,14 @@
 
         <dependency>
             <groupId>cn.tyrone.payment</groupId>
+            <artifactId>payment-common-sdk</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.tyrone.payment</groupId>
             <artifactId>payment-common</artifactId>
+            <version>${parent.version}</version>
         </dependency>
 
         <!-- 中金依赖-开始 -->

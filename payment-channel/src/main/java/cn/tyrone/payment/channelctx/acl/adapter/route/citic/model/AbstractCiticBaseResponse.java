@@ -2,7 +2,7 @@ package cn.tyrone.payment.channelctx.acl.adapter.route.citic.model;
 
 
 import cn.tyrone.payment.channelctx.domain.route.common.AbstractBaseResponse;
-import cn.tyrone.payment.commonctx.util.XmlUtil;
+import cn.tyrone.payment.sdk.util.XmlUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,8 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Node;
 
-import static cn.tyrone.payment.commonctx.util.XmlUtil.*;
+import static cn.tyrone.payment.sdk.util.XmlUtil.createDocument;
+import static cn.tyrone.payment.sdk.util.XmlUtil.getSingleNodeText;
 
 /**
  * 中信银行应答基类

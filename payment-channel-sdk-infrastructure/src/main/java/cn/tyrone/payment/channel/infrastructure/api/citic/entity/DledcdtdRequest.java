@@ -1,5 +1,7 @@
 package cn.tyrone.payment.channel.infrastructure.api.citic.entity;
 
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.CiticAction;
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.IsCurrDay;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 

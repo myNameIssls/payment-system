@@ -1,5 +1,9 @@
 package cn.tyrone.payment.channel.infrastructure.api.citic.entity;
 
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.PayFlg;
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.PreFlg;
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.PreTime;
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.SameBank;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 

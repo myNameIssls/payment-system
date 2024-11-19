@@ -4,7 +4,7 @@ package cn.tyrone.payment.channel.infrastructure.api.cpcn.service;
 import cn.tyrone.payment.channel.common.entity.*;
 import cn.tyrone.payment.channel.common.enums.SettlementMethod;
 import cn.tyrone.payment.channel.domain.adapter.ICpcnPaymentServiceAdapter;
-import cn.tyrone.payment.common.util.DateUtil;
+import cn.tyrone.payment.sdk.util.DateUtil;
 import com.trz.netwk.api.trd.*;
 import com.trz.netwk.api.vo.BankAccT1007;
 import lombok.extern.slf4j.Slf4j;

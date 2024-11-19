@@ -1,5 +1,6 @@
 package cn.tyrone.payment.channel.infrastructure.api.citic.entity;
 
+import cn.tyrone.payment.channel.infrastructure.api.citic.enums.CiticStatus;
 import cn.tyrone.payment.channel.infrastructure.api.common.util.XmlUtil;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;

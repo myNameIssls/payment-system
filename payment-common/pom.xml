@@ -19,6 +19,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>cn.tyrone.payment</groupId>
+            <artifactId>payment-common-sdk</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
