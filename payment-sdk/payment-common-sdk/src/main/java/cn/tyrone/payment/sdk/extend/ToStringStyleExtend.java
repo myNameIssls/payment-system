@@ -3,8 +3,7 @@ package cn.tyrone.payment.sdk.extend;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class ToStringStyleExtend extends ToStringStyle
-{
+public class ToStringStyleExtend extends ToStringStyle {
     public static final ToStringStyle JSON_STYLE_EXTEND = new JsonStringStyleExtend();
 
     private static final class JsonStringStyleExtend extends ToStringStyle {

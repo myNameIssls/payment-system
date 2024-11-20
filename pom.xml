@@ -59,6 +59,14 @@
                 <artifactId>hutool-all</artifactId>
                 <version>5.8.4</version>
             </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.14.0</version>
+            </dependency>
+
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
@@ -76,13 +84,6 @@
                 <scope>runtime</scope>
             </dependency>
 
-
-
-            <dependency>
-                <groupId>cn.tyrone.payment</groupId>
-                <artifactId>payment-system-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
             <dependency>
                 <groupId>cn.tyrone.payment</groupId>
                 <artifactId>payment-channel-sdk-infrastructure</artifactId>
@@ -130,8 +131,6 @@
         <module>payment-channel-sdk-ui</module>
         <module>payment-channel-sdk-application</module>
         <module>payment-channel-sdk-start</module>
-        <module>payment-channel</module>
-        <module>payment-common</module>
         <module>payment-client</module>
         <module>payment-core</module>
         <module>payment-sdk</module>
