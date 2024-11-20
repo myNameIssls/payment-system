@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.tyrone.payment</groupId>
-        <artifactId>payment-system</artifactId>
+        <artifactId>payment-sdk</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>payment-core</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>payment-account-service</module>
-        <module>payment-channel-service</module>
-    </modules>
+    <artifactId>payment-gateway-sdk</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

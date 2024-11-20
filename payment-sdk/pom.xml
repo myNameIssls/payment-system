@@ -14,6 +14,7 @@
     <modules>
         <module>payment-account-sdk</module>
         <module>payment-common-sdk</module>
+        <module>payment-gateway-sdk</module>
     </modules>
 
 
