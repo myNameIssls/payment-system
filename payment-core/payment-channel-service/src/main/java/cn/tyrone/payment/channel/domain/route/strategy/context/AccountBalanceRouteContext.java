@@ -1,7 +1,7 @@
 package cn.tyrone.payment.channel.domain.route.strategy.context;
 
 import cn.tyrone.payment.channel.acl.port.route.PaymentRouteStrategyService;
-import cn.tyrone.payment.channel.domain.channel.PaymentChannelUniqueCode;
+import cn.tyrone.payment.channel.domain.channel.ChannelCode;
 import cn.tyrone.payment.channel.domain.channel.PaymentGatewayType;
 import cn.tyrone.payment.channel.domain.route.strategy.AccountBalanceRoute;
 import cn.tyrone.payment.channel.pl.AccountBalanceRequest;
@@ -37,9 +37,9 @@ public class AccountBalanceRouteContext {
 
         String uniqueValue = accountBalanceRequest.getPaymentChannelUniqueCode();
 
-        PaymentChannelUniqueCode paymentChannelUniqueCode = PaymentChannelUniqueCode.of(uniqueValue);
+        ChannelCode channelCode = ChannelCode.of(uniqueValue);
 
-        String paymentRouteStrategyServiceName = paymentRouteStrategyService.paymentRouteStrategyServiceName(PaymentGatewayType.ACCOUNT_BALANCE, paymentChannelUniqueCode);
+        String paymentRouteStrategyServiceName = paymentRouteStrategyService.paymentRouteStrategyServiceName(PaymentGatewayType.ACCOUNT_BALANCE, channelCode);
         AccountBalanceRoute accountBalanceRoute = this.accountBalanceRouteMap.get(paymentRouteStrategyServiceName);
 
         return accountBalanceRoute;

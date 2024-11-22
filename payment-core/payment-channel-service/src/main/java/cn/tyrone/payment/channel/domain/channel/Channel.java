@@ -6,17 +6,17 @@ import java.util.Map;
 /**
  * 支付通道
  */
-public class PaymentChannel {
+public class Channel {
 
-    private String id;
+    private String channelId;
 
     private String name;
 
     /**
      * 支付通道唯一编码
      */
-    private PaymentChannelUniqueCode paymentChannelUniqueCode;
+    private ChannelCode channelCode;
 
-    private Map<String, Object> paymentChannelConfig;
+    private Map<String, Object> channelConfig;
 
 }

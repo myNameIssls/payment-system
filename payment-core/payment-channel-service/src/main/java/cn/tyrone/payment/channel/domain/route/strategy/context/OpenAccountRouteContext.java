@@ -1,7 +1,7 @@
 package cn.tyrone.payment.channel.domain.route.strategy.context;
 
 import cn.tyrone.payment.channel.acl.port.route.PaymentRouteStrategyService;
-import cn.tyrone.payment.channel.domain.channel.PaymentChannelUniqueCode;
+import cn.tyrone.payment.channel.domain.channel.ChannelCode;
 import cn.tyrone.payment.channel.domain.channel.PaymentGatewayType;
 import cn.tyrone.payment.channel.domain.route.strategy.OpenAccountRoute;
 import cn.tyrone.payment.channel.pl.OpenAccountRequest;
@@ -37,9 +37,9 @@ public class OpenAccountRouteContext {
 
         String uniqueValue = openAccountRequest.getPaymentChannelUniqueCode();
 
-        PaymentChannelUniqueCode paymentChannelUniqueCode = PaymentChannelUniqueCode.of(uniqueValue);
+        ChannelCode channelCode = ChannelCode.of(uniqueValue);
 
-        String paymentRouteStrategyServiceName = paymentRouteStrategyService.paymentRouteStrategyServiceName(PaymentGatewayType.OPEN_ACCOUNT, paymentChannelUniqueCode);
+        String paymentRouteStrategyServiceName = paymentRouteStrategyService.paymentRouteStrategyServiceName(PaymentGatewayType.OPEN_ACCOUNT, channelCode);
         OpenAccountRoute openAccountRoute = this.openAccountRouteMap.get(paymentRouteStrategyServiceName);
 
         return openAccountRoute;

@@ -2,7 +2,7 @@ package cn.tyrone.payment.channel.acl.adapter.route;
 
 import cn.tyrone.payment.channel.acl.adapter.route.cpcn.strategy.impl.AccountBalanceRouteCpcnAdapter;
 import cn.tyrone.payment.channel.acl.adapter.route.cpcn.strategy.impl.OpenAccountRouteCpcnAdapter;
-import cn.tyrone.payment.channel.domain.channel.PaymentChannelUniqueCode;
+import cn.tyrone.payment.channel.domain.channel.ChannelCode;
 import cn.tyrone.payment.channel.domain.channel.PaymentGatewayType;
 import org.springframework.util.StringUtils;
 
@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 public enum PaymentRouteStrategyConfig {
 
     // 中金支付-记账系统-开始
-    OPEN_ACCOUNT_CPCN_ACS(PaymentGatewayType.OPEN_ACCOUNT, PaymentChannelUniqueCode.CPCN_ONE, OpenAccountRouteCpcnAdapter.class, "中金支付-开户接口-记账系统"),
-    ACCOUNT_BALANCE_CPCN_ACS(PaymentGatewayType.ACCOUNT_BALANCE, PaymentChannelUniqueCode.CPCN_ONE, AccountBalanceRouteCpcnAdapter.class, "中金支付-账户余额接口-记账系统"),
+    OPEN_ACCOUNT_CPCN_ACS(PaymentGatewayType.OPEN_ACCOUNT, ChannelCode.CPCN_ONE, OpenAccountRouteCpcnAdapter.class, "中金支付-开户接口-记账系统"),
+    ACCOUNT_BALANCE_CPCN_ACS(PaymentGatewayType.ACCOUNT_BALANCE, ChannelCode.CPCN_ONE, AccountBalanceRouteCpcnAdapter.class, "中金支付-账户余额接口-记账系统"),
     // 中金支付-记账系统-结束
 
     // 中信银行-现金管理系统-开始
@@ -30,7 +30,7 @@ public enum PaymentRouteStrategyConfig {
     /**
      * 渠道配置编码
      */
-    public PaymentChannelUniqueCode paymentChannelUniqueCode;
+    public ChannelCode channelCode;
 
     /**
      * 路由策略实现类
@@ -39,18 +39,18 @@ public enum PaymentRouteStrategyConfig {
 
     public String desceibe;
 
-    PaymentRouteStrategyConfig(PaymentGatewayType paymentGatewayType, PaymentChannelUniqueCode paymentChannelUniqueCode, Class routeStrategyImplClass, String describe) {
+    PaymentRouteStrategyConfig(PaymentGatewayType paymentGatewayType, ChannelCode channelCode, Class routeStrategyImplClass, String describe) {
         this.paymentGatewayType = paymentGatewayType;
-        this.paymentChannelUniqueCode = paymentChannelUniqueCode;
+        this.channelCode = channelCode;
         this.routeStrategyImplClass = routeStrategyImplClass;
         this.desceibe = describe;
     }
 
     public static String getPaymentRouteStrategyServiceName(
-            PaymentGatewayType paymentGatewayType, PaymentChannelUniqueCode paymentChannelUniqueCode) {
+            PaymentGatewayType paymentGatewayType, ChannelCode channelCode) {
 
         PaymentRouteStrategyConfig paymentRouteStrategyConfig1 = Stream.of(PaymentRouteStrategyConfig.values()).filter(paymentRouteStrategyConfig -> {
-            return paymentRouteStrategyConfig.paymentGatewayType.equals(paymentGatewayType) && paymentRouteStrategyConfig.paymentChannelUniqueCode.equals(paymentChannelUniqueCode);
+            return paymentRouteStrategyConfig.paymentGatewayType.equals(paymentGatewayType) && paymentRouteStrategyConfig.channelCode.equals(channelCode);
         }).findFirst().orElseThrow(IllegalArgumentException::new);
 
         Class cls = paymentRouteStrategyConfig1.routeStrategyImplClass;
@@ -61,9 +61,9 @@ public enum PaymentRouteStrategyConfig {
 
     public static void main(String[] args) {
         PaymentGatewayType paymentGatewayType = PaymentGatewayType.OPEN_ACCOUNT;
-        PaymentChannelUniqueCode paymentChannelUniqueCode = PaymentChannelUniqueCode.CPCN_ONE;
+        ChannelCode channelCode = ChannelCode.CPCN_ONE;
 
-        String routeStrategyServiceName = getPaymentRouteStrategyServiceName(paymentGatewayType, paymentChannelUniqueCode);
+        String routeStrategyServiceName = getPaymentRouteStrategyServiceName(paymentGatewayType, channelCode);
         System.out.println(routeStrategyServiceName);
     }
 

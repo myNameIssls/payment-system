@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: payment-channel-sdk-service
+  main:
+    allow-bean-definition-overriding: true
+
+#logging:
+#  level:
+#    com:
+#      alibaba:
+#        nacos:
+#          client: ERROR
+#      iciyun: debug
+#    cn:
+#      tyrone: info
+#    jdbc:
+#      audit: fatal
+#      connection: fatal
+#      resultset: fatal
+#      sqlonly: debug
+#      sqltiming: debug
+#    org:
+#      springframework:
+#        data: debug
+#        web: warn
+#    root: debug
