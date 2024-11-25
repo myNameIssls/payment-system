@@ -1,4 +1,4 @@
-package cn.tyrone.payment.console;
+package cn.tyrone.payment.console.ohs;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

@@ -1,7 +1,7 @@
 package cn.tyrone.payment.channel.acl.adapter.route;
 
 import cn.tyrone.payment.channel.acl.port.route.PaymentRouteStrategyService;
-import cn.tyrone.payment.channel.domain.channel.ChannelCode;
+import cn.tyrone.payment.channel.enums.ChannelCode;
 import cn.tyrone.payment.channel.domain.channel.PaymentGatewayType;
 import org.springframework.stereotype.Service;
 

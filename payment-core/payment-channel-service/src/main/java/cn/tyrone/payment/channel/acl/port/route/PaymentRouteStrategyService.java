@@ -1,7 +1,7 @@
 package cn.tyrone.payment.channel.acl.port.route;
 
 
-import cn.tyrone.payment.channel.domain.channel.ChannelCode;
+import cn.tyrone.payment.channel.enums.ChannelCode;
 import cn.tyrone.payment.channel.domain.channel.PaymentGatewayType;
 
 public interface PaymentRouteStrategyService {

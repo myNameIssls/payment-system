@@ -1,4 +1,4 @@
-package cn.tyrone.payment.sdk.domain;
+package cn.tyrone.payment.sdk.common.domain;
 
 import cn.hutool.core.util.IdUtil;
 

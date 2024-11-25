@@ -2,7 +2,7 @@ package cn.tyrone.payment.channel.acl.adapter.route;
 
 import cn.tyrone.payment.channel.acl.adapter.route.cpcn.strategy.impl.AccountBalanceRouteCpcnAdapter;
 import cn.tyrone.payment.channel.acl.adapter.route.cpcn.strategy.impl.OpenAccountRouteCpcnAdapter;
-import cn.tyrone.payment.channel.domain.channel.ChannelCode;
+import cn.tyrone.payment.channel.enums.ChannelCode;
 import cn.tyrone.payment.channel.domain.channel.PaymentGatewayType;
 import org.springframework.util.StringUtils;
 

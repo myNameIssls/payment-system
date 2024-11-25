@@ -1,4 +1,4 @@
-package cn.tyrone.payment.channel.domain.channel;
+package cn.tyrone.payment.channel.enums;
 
 import java.util.stream.Stream;
 

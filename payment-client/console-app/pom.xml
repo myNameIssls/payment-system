@@ -19,6 +19,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>cn.tyrone.payment</groupId>
+            <artifactId>payment-channel-sdk</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>

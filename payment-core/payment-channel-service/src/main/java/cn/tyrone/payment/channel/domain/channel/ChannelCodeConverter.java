@@ -1,6 +1,8 @@
 package cn.tyrone.payment.channel.domain.channel;
 
 
+import cn.tyrone.payment.channel.enums.ChannelCode;
+
 import javax.persistence.AttributeConverter;
 
 /**

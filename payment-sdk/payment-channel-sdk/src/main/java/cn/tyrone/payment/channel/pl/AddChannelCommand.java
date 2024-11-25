@@ -1,16 +1,15 @@
-package cn.tyrone.payment.channel.domain.channel;
-
+package cn.tyrone.payment.channel.pl;
 
 import cn.tyrone.payment.channel.enums.ChannelCode;
+import cn.tyrone.payment.sdk.common.pl.Command;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Map;
 
-/**
- * 支付通道
- */
-public class Channel {
-
-    private String channelId;
+@Getter
+@Setter
+public class AddChannelCommand implements Command {
 
     private String name;
 
