@@ -20,7 +20,7 @@ public class ChannelCtrl {
      */
     public Result<Void> addChannel(AddChannelCommand command) {
 
-        return Result.success();
+        return channelAppService.addChannel(command);
     }
 
 }
