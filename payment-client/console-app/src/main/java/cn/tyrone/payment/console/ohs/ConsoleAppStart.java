@@ -15,6 +15,6 @@ public class ConsoleAppStart implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("-------------- 支付渠道网关服务启动成功 ---------------");
+        log.info("-------------- 控制台启动成功 ---------------");
     }
 }
