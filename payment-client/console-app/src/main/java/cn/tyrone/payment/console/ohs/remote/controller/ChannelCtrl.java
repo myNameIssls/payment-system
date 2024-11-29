@@ -27,7 +27,9 @@ public class ChannelCtrl {
     @PostMapping("/add")
     public Result<Void> addChannel(AddChannelCommand command) {
 
-        return channelAppService.addChannel(command);
+//        return channelAppService.addChannel(command);
+
+        return Result.success();
     }
 
 }

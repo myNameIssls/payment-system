@@ -2,8 +2,8 @@ package cn.tyrone.payment.channel.domain.channel;
 
 
 import cn.tyrone.payment.channel.enums.ChannelCode;
+import jakarta.persistence.AttributeConverter;
 
-import javax.persistence.AttributeConverter;
 
 /**
  * 支付渠道唯一编码转换器
