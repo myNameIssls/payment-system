@@ -9,9 +9,8 @@ public class DepositoryBank implements Serializable {
 
     /**
      * 存管银行编码
-     * 435:郑州银行
      */
-    public static final String BANK_CODE = "435";
+    public static final String BANK_CODE = "44444444";
 
 
 }
